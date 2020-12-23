@@ -1,0 +1,130 @@
+﻿@*@model Customer*@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--<form class=" WhiteBacground font" dir="rtl"  method="post">
+    <div class="row">
+        <div class="col-6 text-right">
+            <br />
+            <h3 class="text-info">اضافة طرد</h3>
+            <br />
+
+        </div>
+    </div>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>-->
+    @* Code *@
+    <!--<div class="row text-right" style="padding-right:20px">
+        <div id="di" class="col-md-2 col-sm-12 col-lg-2">
+            <label asp-for="Code" class="col-form-label font" style="font-size:15px"></label>
+        </div>
+        <div class="col-md-5 col-sm-12 col-lg-5">
+            <input class="text form-control" asp-for="Code" />
+        </div>
+    </div>-->
+
+    @* Name *@
+    <!--<div class="row text-right" style="padding-right:20px; padding-top:20px;">
+        <div class="col-md-2 col-sm-12 col-lg-2">
+            <label asp-for="Name" class="col-form-label font" style="font-size:15px"></label>
+        </div>
+        <div class="col-md-5 col-sm-12 col-lg-5">
+            <input class="text form-control" asp-for="Name" />
+            <span class="text-danger" data-valmsg-replace="true" asp-validation-for="Name"></span>
+        </div>
+    </div>-->
+
+    @* Email *@
+    <!--<div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+        <div class="col-md-2 col-sm-12 col-lg-2">
+            <label asp-for="Email" class="col-form-label font" style="font-size:15px"></label>
+        </div>
+        <div class="col-md-5 col-sm-12 col-lg-5">-->
+            @*<input class="text form-control" asp-for="City" />
+            *@
+            <!--<input class="text form-control" asp-for="Email" />
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+    </div>-->
+    @* Phone1 *@
+    <!--<div class="row text-right" style="padding-right:20px; padding-top:20px;">
+        <div class="col-md-2 col-sm-12 col-lg-2">
+            <label asp-for="Phone1" class="col-form-label font" style="font-size:15px"></label>
+        </div>
+        <div class="col-md-5 col-sm-12 col-lg-5">
+            <input class="text form-control" asp-for="Phone1" />
+            <span class="text-danger" data-valmsg-replace="true" asp-validation-for="Phone1"></span>
+
+        </div>
+    </div>-->
+
+    @* Phone2 *@
+    <!--<div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+        <div class="col-md-2 col-sm-12 col-lg-2">
+            <label asp-for="Phone2" class="col-form-label font" style="font-size:15px"></label>
+        </div>
+        <div class="col-md-5 col-sm-12 col-lg-5">
+            <input class="text form-control" asp-for="Phone2" />
+        </div>
+    </div>-->
+
+    @* Address *@
+    <!--<div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+        <div class="col-md-2 col-sm-12 col-lg-2">
+            <label asp-for="Address" class="col-form-label font" style="font-size:15px"></label>
+        </div>
+        <div class="col-md-5 col-sm-12 col-lg-5">
+            <input class="text form-control" asp-for="Address" />
+            <span class="text-danger" data-valmsg-replace="true" asp-validation-for="Address"></span>
+        </div>
+    </div>-->
+
+    @* Password *@
+    <!--<div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+        <div class="col-md-2 col-sm-12 col-lg-2">
+            <label asp-for="Password" class="col-form-label font" style="font-size:15px"></label>
+        </div>
+        <div class="col-md-5 col-sm-12 col-lg-5">
+            <input class="text form-control" asp-for="Password" />
+            <span class="text-danger" data-valmsg-replace="true" asp-validation-for="Password"></span>
+        </div>
+    </div>
+
+     ConfirmPassWord 
+    <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+        <div class="col-md-2 col-sm-12 col-lg-2">
+            <label asp-for="ConfirmPassword" class="col-form-label font" style="font-size:15px"></label>
+        </div>
+        <div class="col-md-5 col-sm-12 col-lg-5">
+            <input class="text form-control" asp-for="ConfirmPassword" />
+            <span class="text-danger" data-valmsg-replace="true" asp-validation-for="Input.ConfirmPassword"></span>
+        </div>
+    </div>-->
+
+
+    @* Buttons *@
+    <!--<div class="row" style="padding-right:20px; padding-top:20px;">
+        <div class="col-lg-2 col-md-2">
+
+        </div>
+        <div class="col-md-5 col-sm-12 col-lg-5">
+            <div class="row">
+                <div class="col-6">
+                    <a class="btn-secondary form-control" asp-area="Customer" asp-controller="Home" asp-action="Index" style="text-align:center;">رجوع</a>
+                </div>
+                <div class="col-6">
+                    <input type="submit" class="btn-primary form-control" value="تسجيل" style="text-align:center;" />
+                    <button type="submit" class="btn btn-primary">Register</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>-->
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+

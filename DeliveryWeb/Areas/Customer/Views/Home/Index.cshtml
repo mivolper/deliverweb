@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+     
+    }
+
+    #photo {
+        background: linear-gradient( rgb(0, 0, 0,0.2),#009688),url('https://cdn.pixabay.com/photo/2017/01/18/16/46/hong-kong-1990268_1280.jpg' );
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+       
+    }
+  
+
+</style>
+
+<section id="photo">
+    <img src="" class="logo" />
+        <div class="bsnner-text">
+            <h1>Quick Delivary</h1>
+            <p>كويك دليفري</p>
+            <div class="banner-btn" dir="rtl">
+                <partial name="_Loginbtn" />
+                <a id="a" asp-area="Customer" asp-controller="Home" asp-action="Terms"><span id="accountAdd"></span>انشاء حساب</a>
+            </div>
+        </div>
+</section>
+
+<script>
+    var accountAdd = document.getElementById("accountAdd");
+    var login = document.getElementById("login");
+    var a = document.getElementById("a");
+    var a1 = document.getElementById("a1");
+    var photo = document.getElementById("photo");
+
+    a.onclick = function () {
+        if (accountAdd.style.width == "0%") {
+            accountAdd.style.width = "100%";
+            a.style.color = "#009688";
+        }
+        else {
+            accountAdd.style.width = "0%";
+            a.style.color = "#fff";
+
+        }
+    }
+    a1.onclick = function () {
+        if (login.style.width == "0%") {
+                login.style.width = "100%";
+                a1.style.color = "#009688";
+            }
+            else {
+                login.style.width = "0%";
+                a1.style.color = "#fff";
+
+            }
+    }
+    photo.onclick = function () {
+        if (sideNav.style.left == "-200px") {
+            sideNav.style.left = "0";
+            menu.style.display = "none";
+            cancle.style.left = "200px";
+
+        }
+        else {
+            sideNav.style.left = "-250px";
+            menu.style.display = "block";
+            cancle.style.left = "-200px";
+        }
+    }
+</script>

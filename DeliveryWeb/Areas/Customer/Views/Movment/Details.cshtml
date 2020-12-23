@@ -1,0 +1,180 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    .WhiteBacground {
+        background-color: #fff;
+        border: solid 4px #009688;
+        border-radius: 10px;
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        color: #050404;
+        font-family: 'shahd-bold';
+    }
+
+    .font {
+        font-family: 'shahd-bold';
+        font-size: 18px;
+    }
+
+    input {
+        z-index: -1;
+    }
+
+    .form-control {
+        font-family: 'Changa', sans-serif;
+    }
+</style>
+<div class="container" style="padding-top:70px; margin-bottom:100px;">
+    <form class=" WhiteBacground font" dir="rtl">
+        <div class="row">
+            <div class="col-12 text-right">
+                <br />
+                <h3>بيانات الطرد</h3>
+                <br />
+
+            </div>
+        </div>
+
+        @Html.HiddenFor(m => m.ID_Order)
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @* CustomerCode *@
+        <div class="row text-right" style="padding-right:20px">
+            <div id="di" class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="Barcode" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="Barcode" />
+            </div>
+        </div>
+
+        @* State *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px;">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="State" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="State" />
+            </div>
+        </div>
+
+        @* Recipient *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px;">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="Recipient" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="Recipient" />
+            </div>
+        </div>
+
+        @* RecipientPhone1 *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px;">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="RecipientPhone1" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="RecipientPhone1" />
+            </div>
+        </div>
+
+        @* RecipientPhone2 *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="RecipientPhone2" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="RecipientPhone2" />
+            </div>
+        </div>
+
+        @* Address *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="Address" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="Address" />
+            </div>
+        </div>
+
+        @* City *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="City" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="City" />
+            </div>
+        </div>
+
+        @* PackagePrice *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="PackagePrice" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="PackagePrice" />
+            </div>
+        </div>
+
+        @* PackageNumber *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="PackageNumber" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="PackageNumber" />
+            </div>
+        </div>
+
+        @* DeliveryPrice *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="DeliveryPrice" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="DeliveryPrice" />
+            </div>
+        </div>
+
+        @* TotalPrice *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="TotalPrice" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="TotalPrice" />
+            </div>
+        </div>
+        @* Date *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="Date" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" readonly asp-for="Date" />
+            </div>
+        </div>
+
+        @* Buttons *@
+        <div class="row" style="padding-right:20px; padding-top:20px;">
+            <div class="col-lg-2 col-md-2">
+
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <div class="row">
+                    <div class="col-12">
+                        <a class="btn-secondary form-control" asp-controller="Movment" asp-action="Index" style="text-align:center;text-decoration:none;margin-top:10px">رجوع</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

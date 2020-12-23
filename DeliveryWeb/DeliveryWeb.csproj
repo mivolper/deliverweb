@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-DeliveryWeb-BC3413C1-82E4-4685-A8A2-57D96A3AC32B</UserSecretsId>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+	<AspNetCoreHostingModel>In</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20201124123347_Orders.cs" />
+    <Compile Remove="Data\Migrations\20201124123347_Orders.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201124124005_Orders.cs" />
+    <Compile Remove="Data\Migrations\20201124124005_Orders.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201130182941_Province.cs" />
+    <Compile Remove="Data\Migrations\20201130182941_Province.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201201055902_Update_City.cs" />
+    <Compile Remove="Data\Migrations\20201201055902_Update_City.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201201060812_Update_City.cs" />
+    <Compile Remove="Data\Migrations\20201201060812_Update_City.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201201061125_Update_City.cs" />
+    <Compile Remove="Data\Migrations\20201201061125_Update_City.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
+    <PackageReference Include="SendGrid" Version="9.21.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Customer\Views\CustomerOrder\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\landscape-5000655_1920.jpg" />
+  </ItemGroup>
+
+</Project>

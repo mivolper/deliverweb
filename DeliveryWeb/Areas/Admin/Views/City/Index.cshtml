@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Brunsh>
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+      h4 {
+            color: #050404;
+            font-family: 'shahd-bold';
+        }
+        p {
+            color: #c21b1b;
+            font-family: 'shahd-bold';
+            font-size: 20px;
+        }
+
+    .padding {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-family: 'Changa', sans-serif;
+        font-size: 15px;
+    }
+
+    .roco {
+        background-color: #009688 !important;
+        color: white;
+    }
+
+    .nowrap {
+        white-space: nowrap;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid #a6b0b9 !important;
+    }
+
+    @@media (max-width: 576px) {
+
+        p {
+            font-size: 12px;
+        }
+    }
+ 
+
+</style>
+<div class="container" style="padding-top:70px; margin-bottom:100px; z-index:-1;">
+    <div class="container" style="padding-top:70px; margin-bottom:100px; z-index:-1;">
+        <div id="wa" dir="rtl" class="font WhiteBacground ">
+            <div class="row">
+                <div class="col-8 text-right">
+                    <br />
+                    <h4>اسعار التوصيل</h4>
+                    <br />
+                </div>
+                <div class=" col-12">
+                    <p class="text-right">
+                        قم باختيار الفرع الذي ترغب بوضع الطرد فيه
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                 
+
+                    <div class="col-sm-8">
+                        <div class="roco row bg-secondary text-white text-right " style="font-size:small;background-color: #009688 !important;">
+                            <div class="col-7 padding">
+                                @Html.DisplayNameFor(m => m.BrunshName)
+                            </div>
+
+                            <div class="col-5 padding">
+
+                            </div>
+                        </div>
+
+                        @foreach (var item in Model)
+                        {
+                            <div class="row border-bottom" style="font-size:small;">
+                                <div class="col-7 padding text-right">
+                                    @Html.DisplayFor(m => item.BrunshName)
+                                </div>
+
+                                <div class="col-5 padding text-left">
+                                    <a class="btn btn-success" asp-area="Admin" asp-controller="City" asp-action="Details" asp-route-brunsh="@item.BrunshName" asp-route-code="@item.Code"><i class="far fa-list-alt"></i></a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    @*<div id="Seen_in_lg" class="col-sm-4">
+                            <p class="text-right">
+                                قم باختيار الفرع الذي ترغب باضافة المدينة اليه
+                            </p>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

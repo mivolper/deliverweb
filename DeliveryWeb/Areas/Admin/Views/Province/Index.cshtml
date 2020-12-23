@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Province>
+@{
+    ViewData["Title"] = "Index";
+    <style>
+
+        .padding {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-family: 'Changa', sans-serif;
+            font-size: 15px;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid #a6b0b9 !important;
+        }
+
+        .WhiteBacground {
+            background-color: #fff;
+            border: solid 4px #009688 !important;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .font {
+            font-family: 'Changa', sans-serif;
+            font-size: 18px;
+        }
+
+        .roco {
+            background-color: #009688 !important;
+            color: white;
+        }
+
+        .txtCO {
+            color: #050404;
+            font-family: 'shahd-bold';
+        }
+
+        .btnAdd {
+            font-size: 15px;
+            font-family: 'shahd-bold';
+            padding-top: 10px;
+        }
+
+        @@media screen and (max-width:400px) {
+            .btnAdd {
+                font-size: 12px;
+            }
+
+           .txtCO{
+               font-size:17px;
+           }
+        }
+    </style>
+}
+
+
+
+<div class="container" style="padding-top:70px; margin-bottom:100px; z-index:-1;">
+    <div dir="rtl" class="font WhiteBacground border">
+        <div class="row">
+            <div class="col-6 text-right">
+                <br />
+                <h4 class="txtCO">قائمة الأقاليم</h4>
+                <br />
+            </div>
+            <div class="col-6" style="padding-top:20px">
+                <a class="btnAdd btn btn-primary text-white"  asp-area="Admin" asp-controller="Province" asp-action="Add"><i class="fas fa-plus"></i> &nbsp;اضافة اقليم</a>
+            </div>
+        </div>
+        <div>
+            @if (Model.Count() == 0)
+            {
+                <div class="text-danger text-right">لايوجد أقاليم . . .</div>
+            }
+            else
+            {
+                <div class="roco row bg-secondary text-white text-right " style="font-size:small;">
+                    <div class="col-7 padding">
+                        @Html.DisplayNameFor(m => m.ProvinceName)
+                    </div>
+
+                    <div class="col-5 padding">
+
+                    </div>
+                </div>
+
+                @foreach (var item in Model)
+                {
+                    <div class="row border-bottom" style="font-size:small;">
+                        <div class="col-7 padding text-right">
+                            @Html.DisplayFor(m => item.ProvinceName)
+                        </div>
+
+                        <div class="col-5 padding text-left">
+                            <a class="btn btn-success" asp-area="Admin" asp-controller="Province" asp-action="Edit" asp-route-id="@item.ID_Province"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger" asp-area="Admin" asp-controller="Province" asp-action="Delete" asp-route-id="@item.ID_Province"><i class="far fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</div>

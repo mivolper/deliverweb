@@ -1,0 +1,151 @@
+﻿@model City_CustomerOrder_VM
+@{
+    ViewData["Title"] = "AddOrder";
+}
+
+<style>
+    .WhiteBacground {
+        background-color: #fff;
+        border: solid 4px #009688;
+        border-radius: 10px;
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        color: #050404;
+        font-family: 'shahd-bold';
+    }
+
+    .font {
+        font-family: 'shahd-bold';
+        font-size: 18px;
+    }
+    input{
+           z-index:-1;
+    }
+    .form-control {
+        font-family: 'Changa', sans-serif;
+    }
+</style>
+<div class="container" style="padding-top:70px; margin-bottom:100px;">
+    <form class=" WhiteBacground font " dir="rtl" method="post" asp-action="AddOrder">
+        <div class="row">
+            <div class="col-6 text-right">
+                <br />
+                <h3>اضافة طرد</h3>
+                <br />
+
+            </div>
+        </div>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @* CustomerCode *@
+        <div class="row text-right" style="padding-right:20px">
+            <div id="di" class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="CustomerOrder.CustomerCode" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" asp-for="CustomerOrder.CustomerCode" readonly />
+            </div>
+        </div>
+
+        @* Recipient *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px;">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="CustomerOrder.Recipient" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" asp-for="CustomerOrder.Recipient" />
+                <span class="text-danger" data-valmsg-replace="true" asp-validation-for="CustomerOrder.Recipient"></span>
+            </div>
+        </div>
+
+        @* RecipientPhone1 *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px;">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="CustomerOrder.RecipientPhone1" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" asp-for="CustomerOrder.RecipientPhone1" />
+                <span class="text-danger" data-valmsg-replace="true" asp-validation-for="CustomerOrder.RecipientPhone1"></span>
+
+            </div>
+        </div>
+
+        @* RecipientPhone2 *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="CustomerOrder.RecipientPhone2" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" asp-for="CustomerOrder.RecipientPhone2" />
+            </div>
+        </div>
+
+        @* Address *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="CustomerOrder.Address" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" asp-for="CustomerOrder.Address" />
+            </div>
+        </div>
+
+        @* City *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="CustomerOrder.City" class="col-form-label font" style="font-size:15px">المدينة</label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                @*<input class="text form-control" asp-for="City" />
+                *@
+                <select id="ddlCities" class="form-control" asp-for="CustomerOrder.ID_City" asp-items="@(new SelectList(Model.Cities,"ID_City","CityName"))"></select>
+                <span class="text-danger" asp-validation-for="CustomerOrder.ID_City"></span>
+            </div>
+        </div>
+
+        @* PackagePrice *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="CustomerOrder.PackagePrice" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" asp-for="CustomerOrder.PackagePrice" />
+            </div>
+        </div>
+
+        @* PackageNumber *@
+        <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+            <div class="col-md-2 col-sm-12 col-lg-2">
+                <label asp-for="CustomerOrder.PackageNumber" class="col-form-label font" style="font-size:15px"></label>
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <input class="text form-control" asp-for="CustomerOrder.PackageNumber" />
+            </div>
+        </div>
+
+
+        @* Buttons *@
+        <div class="row" style="padding-right:20px; padding-top:20px;">
+            <div class="col-lg-2 col-md-2">
+
+            </div>
+            <div class="col-md-5 col-sm-12 col-lg-5">
+                <div class="row">
+                    <div class="col-6">
+                        <a class="btn-secondary form-control" asp-action="Index" style="text-align:center; text-decoration:none; font-family: 'shahd-bold';">رجوع</a>
+                    </div>
+                    <div class="col-6">
+                        <input type="submit" class="btn-success form-control" value="حفظ الطرد" style="text-align:center; font-family: 'shahd-bold';padding-top:8px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

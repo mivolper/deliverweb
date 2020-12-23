@@ -1,0 +1,289 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@500&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mada&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=shahd-bold" />
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #c0d7d5;
+    }
+
+    .form {
+        z-index: 1;
+        font-family: "poppins",sans-serif!important ;
+        position: absolute;
+        width: 320px;
+        text-align: center;
+        border: solid 7px #009688 !important;
+        border-radius: 28px;
+    }
+
+    form {
+        margin: 14px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .form i {
+        z-index: 1;
+        color: #ccc;
+        font-size: 65px;
+        margin-bottom: 30px;
+    }
+
+    .form .user-input {
+        width: 100%;
+        height: 55px;
+        margin-bottom: 30px;
+        outline: none;
+        border: none;
+        background-color: whitesmoke;
+        color: #111;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 5px;
+        transition: 0.5s;
+        transition-property: border-left,border-right,box-shadow;
+        border-left: 8px solid #009688;
+        border-right: 8px solid #009688;
+     font-family: 'shahd-bold'!important;
+    }
+
+    .signup-form {
+        display: none;
+    }
+
+    .user-input:focus {
+        border-left: 8px solid #009688;
+        border-right: 8px solid #009688;
+        box-shadow: 0 0 100px #009688;
+    }
+
+    .options-1 {
+        margin-bottom: 50px;
+    }
+
+        .options-1 input {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            color: #009688;
+        }
+
+        .options-1 .remeber-me {
+            float: left;
+            color: #111;
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .options-1 a {
+            color: #111;
+            font-size: 14px;
+            float: right;
+            font-family: 'Changa', sans-serif;
+            margin-top: -19px;
+            margin-right: 10px;
+        }
+
+    .btn {
+        width: 95%;
+        height: 55px;
+        outline: none;
+        border: none;
+        font-size: 18px;
+        background-color: #009688;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        letter-spacing: 2px;
+        transition: 0.5s;
+        transition-property: border-left,border-right,box-shadow;
+    }
+
+        .btn:hover {
+            box-shadow: 0 0 100px #009688;
+        }
+
+    .options-2 {
+        color: #bbb;
+        font-size: 14px;
+        margin-top: 30px;
+        
+    }
+
+        .options-2 a {
+            color: #009688;
+            font-size: 15px;
+            margin-right: 10px;
+           
+        }
+    .acc {
+        color: #111;
+        font-size: 11px;
+    }
+    
+    @@media screen and (max-width: 500px) {
+        .form {
+            width: 95%;
+        }
+
+            .form .user-input {
+                width: 100%;
+            }
+
+        .btn {
+            width: 100%;
+        }
+
+        form {
+            margin: 16px;
+            margin-top: 76px;
+            margin-bottom: 103px;
+        }
+    }
+</style>
+
+
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="form">
+        <form action="" method="post">
+            <i class="fas fa-user-circle" style="color: #009688"></i>
+            <input class="user-input form-control" style=" font-family: 'shahd-bold' ;" asp-for="Input.Email" placeholder="Email" required />
+            <input class="user-input  form-control" style=" font-family: 'shahd-bold' ;" asp-for="Input.Password" placeholder="Password" required />
+            <div class="options-1">
+                @*<label class="remeber-me"><input type="checkbox" name="" style="color:#009688;background-color:#009688" />Remeber me</label>*@
+                <a asp-area="Identity" asp-page="ForgotPassword">هل نسيت كلمة السر ؟</a>
+            </div>
+            <input class="btn" type="submit" name="" value="LOGIN" />
+            <div class="options-2" >
+                <p class="acc" style=" font-family: 'shahd-bold' ;">هل تريد إنشاء حساب؟<a style=" font-family: 'shahd-bold' ;"  asp-area="Customer" asp-controller="Home" asp-action="Terms">إنشاء حساب</a></p>
+            </div>
+        </form>
+        @*<form class="signup-form" action="" method="post">
+                <i class="fas fa-user-plus"></i>
+                <input class="user-input" type="text" name="" placeholder="Username" required />
+                <input class="user-input" type="email" name="" placeholder="Email Address" required />
+                <input class="user-input" type="Password" name="" placeholder="Password" required />
+                <input class="btn" type="submit" name="" value="SIGN up" />
+                <div class="options-2">
+                    <p>Already Registered? <a href="#">Sign In</a></p>
+                </div>
+
+            </form>*@
+    </div>
+    @*<script type="text/javascript">
+            $('.options-2 a').click(function () {
+                $('form').animate({
+                    height: "toggle", opacity: "toggle"
+                }, "slow");
+            });
+        </script>*@
+</body>
+@*<div class="row">
+        <div class="col-md-4">
+            <section>
+                <form id="account" method="post">
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="Input.RememberMe">
+                                <input asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                        </p>
+                        <p>
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                        </p>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div class="col-md-6 col-md-offset-2">
+            <section>
+                <h4>Use another service to log in.</h4>
+                <hr />
+                @{
+                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                    {
+                        <div>
+                            <p>
+                                There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                                for details on setting up this ASP.NET application to support logging in via external services.
+                            </p>
+                        </div>
+                    }
+                    else
+                    {
+                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                            <div>
+                                <p>
+                                    @foreach (var provider in Model.ExternalLogins)
+                                    {
+                                        <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    }
+                                </p>
+                            </div>
+                        </form>
+                    }
+                }
+            </section>
+        </div>
+    </div>*@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

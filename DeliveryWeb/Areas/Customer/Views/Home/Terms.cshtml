@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewData["Title"] = "Terms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #Next {
+        pointer-events: none;
+        font-family: 'shahd-bold';
+        color: #fff;
+        width: 100px;
+        background-color: #009688;
+        opacity: 0.5;
+    }
+
+    #Ok {
+        font-family: 'shahd-bold';
+        margin-left: 10px;
+    }
+
+    .labelOk {
+        font-family: 'shahd-bold';
+        text-align: initial;
+        margin-bottom: 10px;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    p {
+        font-family: 'Changa', sans-serif;
+        font-size: 14px;
+        text-align: initial;
+    }
+    .ULTerms {
+        margin-top: 5px;
+        margin-bottom: 34px;
+        border-bottom: 1px solid #e5e3e3;
+    }
+</style>
+
+<div class="container" style="padding-top:70px; margin-bottom:100px; z-index:-1;">
+
+    <form class=" WhiteBacground font" dir="rtl"  method="post">
+        <div id="Terms">
+            <div class="row">
+                <div class="col-12 text-right">
+                    <br />
+                    <h3 class="txtCO">إتفاقية الخدمة :</h3>
+                    <br />
+
+                </div>
+            </div>
+            <div>
+                <ul class="ULTerms">
+                    <li>
+                        <p>1-  نعلمكم بعدم مسؤوليتنا عن ضياع او تلف البضاعة في حالة وقوع سطو مسلح لاقدر الله داخل مكاتبنا او في الطريق حيث اننا حريصون بعدم المسير ليلا بالشاحنات الا في الظروف الاستثنائية.</p>
+                    </li>
+
+                    <li>
+                        <p>
+                            2- نخلي المسؤولية عن اي بضاعة لم يبلغ صاحبها عن قابليتها للكسر او اذا كانت غير مغلفة تغليفا جيدا.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            3- يمنع منعا باتا شحن الاسلحة والذخائر والالعاب النارية والسجائر وماشبهها والمواد القابلة للإشتعال من وقود وغاز الطهي.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            4- يرجى من الزبون المرسل للبضاعة تحري الدقة في اسم المستلم ووجة البضاعة ورقم الهاتف .
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            5- على مرسل البضاعة اخبار المستلم بسعر الشحن ورقم الطرد مباشرة وفي حالة المراجعة يجب احضار ايصال الشحن.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            6- نظرا للظروف الراهنة للبلاد نلتمس منكم العذر بسبب اغلاق الطريق او اعطال الشاحنات المفاجئ اثناء الرحلة.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            7- نعلمكم بعدم مسؤوليتنا عن فقدان او تلف اي بضاعة بعد مضي 3 اشهر من تاريخ وصولها للمكتب.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            8- يحق لشركة كويك دليفري مع ضمان سلامة الشحنة الحق في المعاينة وتفتيش جميع الشحنات.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            9- يتعهد المرسل بعدم استخدام خدماتنا بما يتعارض مع القانون والاخلاق او للأعمال الحتيالية.
+                        </p>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="row">
+                <label class="col-12 labelOk form-check-label">
+                    <input id="Ok" type="checkbox" />أوافق على شروط الخدمة
+                </label>
+                <div class="col-6">
+                    <a asp-area="Identity" asp-page="/Account/Register" class=" btn-secondary form-control" id="Next" style="text-align:center;text-decoration:none">التالي</a>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+<script>
+    var Ok = document.getElementById("Ok");
+    var cancel = document.getElementById("cancel");
+    var Next = document.getElementById("Next");
+    var Terms = document.getElementById("Terms");
+    var Register = document.getElementById("Register");
+    var txtName = document.getElementById("txtName")
+
+    Ok.onclick = function () {
+        if (Next.style.pointerEvents == "visible") {
+            Next.style.pointerEvents = "none"
+            Next.style.opacity = "0.5";
+        }
+        else {
+            Next.style.pointerEvents = "visible";
+            Next.style.opacity = "1";
+
+        }
+
+
+    }
+
+   
+    </script>

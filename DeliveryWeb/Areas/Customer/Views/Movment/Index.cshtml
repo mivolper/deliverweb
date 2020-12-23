@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "Index";
+    <style>
+
+        .padding {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-family: 'Changa', sans-serif;
+            font-size: 15px;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+        h4 {
+            color: #050404;
+            font-family: 'shahd-bold';
+        }
+        .roco {
+            background-color: #009688 !important;
+            color: white;
+        }
+    </style>
+}
+<div class="container" style="padding-top:70px; margin-bottom:100px;">
+    <div dir="rtl" class="font WhiteBacground border">
+        <div class="row">
+            <div class="col-7 text-right">
+                <br />
+                <h4 >قائمة الطرود</h4>
+                <br />
+            </div>
+        </div>
+        <div>
+            @if (Model.Count() == 0)
+            {
+                <div class="text-danger text-right">لايوجد طرود . . .</div>
+            }
+            else
+            {
+                <div class="roco row bg-secondary text-white text-right " style="font-size:small;font-family: 'Changa', sans-serif;">
+                    <div class="col-4 padding">
+                        @Html.DisplayNameFor(m => m.Barcode)
+                    </div>
+
+                    <div class="col-4 padding">
+                        @Html.DisplayNameFor(m => m.State)
+                    </div>
+
+                    <div class="col-4">
+
+                    </div>
+                </div>
+
+                @foreach (var item in Model)
+                {
+                    <div class="row border-bottom" style="font-size:small;font-family: 'Changa', sans-serif;">
+                        <div class="col-4 padding text-right">
+                            @Html.DisplayFor(m => item.Barcode)
+                        </div>
+
+                        <div class="col-5 padding text-right">
+                            @Html.DisplayFor(m => item.State)
+                        </div>
+
+                        <div class="col-3 padding text-left nowrap">
+                            <a class="btn btn-success" asp-area="Customer" asp-controller="Movment" asp-action="Details" asp-route-barcode="@item.Barcode"><i class="far fa-list-alt"></i></a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

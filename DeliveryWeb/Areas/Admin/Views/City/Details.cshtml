@@ -1,0 +1,120 @@
+﻿@model Cities_BrunshName
+@{
+    ViewData["Title"] = "Details";
+    <style>
+
+       
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid #a6b0b9 !important;
+        }
+        .row1 {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-bottom: -10px;
+        }
+
+        .cnt {
+            text-align: center;
+        }
+    </style>
+}
+<div class="container" style="padding-top:70px; margin-bottom:100px; z-index:-1;">
+    <div dir="rtl" class="font WhiteBacground border">
+        @*<div class="row">
+        <div class="col-12 text-right">
+            <br />
+            <h4 class="cnt txtCO">اسعار التوصيل</h4>
+            <br />
+        </div>
+        <div class="col-12 row1" style="margin-right: 29px;">
+            <div class="col-8 row1" >
+                <div class="col-4 text-left">
+
+                    <a class="btn-secondary btn" asp-controller="City" asp-action="Index" style="text-align:center; text-decoration:none ;  font-family: 'shahd-bold';">رجوع</a>
+                </div>
+                <div class="col-4 text-left">
+                    <a class="btn btn-primary text-white" style="text-align:center; font-family: 'shahd-bold';padding-top:8px" asp-area="Admin" asp-controller="City" asp-action="Add" asp-route-code="@Model.Code"><i class="fas fa-plus"></i> &nbsp;اضافة مدينة</a>
+                </div>
+            </div>
+                <div class="col-2 text-right">
+                    <h4 class="txtCO" style="margin-right: -40px;">فرع  @Model.BrunshName </h4>
+                    <br />
+                </div>
+
+
+
+            </div>
+        </div>*@
+        <div class="row">
+            <div class="col-12 text-right">
+                <br />
+                <h4 class="cnt">اسعار التوصيل</h4>
+                <br />
+            </div>
+            <div class="col-12 row1" style="margin-right: 29px;">
+                <div class="col-8 col-md-4  text-left" style="margin-bottom: 20px;">
+
+                    <a class=" btn btn-primary text-white form-control" style="text-align:center; font-family: 'shahd-bold';padding-top:8px;margin-bottom:10px" asp-area="Admin" asp-controller="City" asp-action="Add" asp-route-code="@Model.Code"><i class="fas fa-plus"></i> &nbsp;اضافة مدينة</a>
+                    <a class=" btn-secondary form-control" asp-controller="City" asp-action="Index" style="text-align:center; text-decoration:none ;  font-family: 'shahd-bold';">رجوع</a>
+
+                </div>
+                <div class="col-4 col-md-8 text-right">
+                    <h4 style="margin-right: -40px;">فرع @Model.BrunshName </h4>
+
+                </div>
+
+            </div>
+        </div>
+        <div>
+            @if (Model.Cities.Count() == 0)
+            {
+                <div class="text-danger text-right">لايوجد مدن . . .</div>
+            }
+            else
+            {
+                <div class="roco row bg-secondary text-white text-right " style="font-size:small;">
+                    <div class="col-4 padding">
+                        @Html.DisplayNameFor(m => m.Cities.First().CityName)
+                    </div>
+
+                    <div class="col-3 padding">
+                        @Html.DisplayNameFor(m => m.Cities.First().PriceMen)
+                    </div>
+
+                    <div class="col-5 padding">
+                    </div>
+                </div>
+
+                @foreach (var item in Model.Cities)
+                {
+                    <div class="row border-bottom" style="font-size:small;">
+                        <div class="col-4 padding text-right">
+                            @Html.DisplayFor(m => item.CityName)
+                        </div>
+
+                        <div class="col-3 padding text-right">
+                            @Html.DisplayFor(m => item.PriceMen)
+                        </div>
+
+                        <div class="col-5 padding text-left">
+                            <a class="btn btn-success" asp-area="Admin" asp-controller="City" asp-action="Edit" asp-route-id="@item.ID_City"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger" asp-area="Admin" asp-controller="City" asp-action="Delete" asp-route-id="@item.ID_City"><i class="far fa-trash-alt"></i></a>
+                        </div>
+
+                    </div>
+                }
+                <div class=" padding text-left">
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>
+   </div>
+

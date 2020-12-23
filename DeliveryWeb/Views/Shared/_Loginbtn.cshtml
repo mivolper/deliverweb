@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+     <a id="a2" asp-area="Identity" asp-page="/Account/Logout">تسجيل الخروج</a>
+}
+else
+{
+     <a id="a1" asp-area="Identity" asp-page="/Account/Login">تسجيل الدخول</a>
+
+}

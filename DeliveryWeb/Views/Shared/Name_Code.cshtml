@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using DeliveryWeb.Data
+@inject SignInManager<IdentityUser> SignInManager
+@inject ApplicationDbContext Db
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+         <li><p class="name" style=" margin-bottom: -2rem; font-family: 'Changa', sans-serif; color:#fff ;font-size: 16px;">@Db.Customers.SingleOrDefault(item => item.UserName == User.Identity.Name).Name</p></li>
+         <li><p class="code" style=" margin-bottom: 3rem; font-family: 'Changa', sans-serif; border-bottom: 1px solid #e5e3e3; color:#fff ;font-size: 16px;">@Db.Customers.SingleOrDefault(item => item.UserName == User.Identity.Name).Code</p></li> 
+    }                           

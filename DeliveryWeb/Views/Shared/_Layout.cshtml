@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DeliveryWeb</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("head", required: false)
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mada&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=shahd-bold" />
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+        }
+        body {
+            background-color: #c0d7d5;
+        }
+        .bsnner-text {
+            text-align: center;
+            color: #fff;
+            padding-top: 180px;
+        }
+
+            .bsnner-text h1 {
+                font-size: 80px;
+                font-family: 'Kaushan Script', cursive;
+            }
+
+            .bsnner-text p {
+                font-size: 20px;
+                font-family: 'shahd-bold';
+            }
+
+        .banner-btn {
+            margin: 70px auto 0px;
+        }
+
+            .banner-btn a {
+                width: 150px;
+                text-decoration: none;
+                margin: 0 10px;
+                padding: 12px 0;
+                display: inline-block;
+                color: #fff;
+                border: .5px solid #fff;
+                z-index: 1;
+                position: relative;
+                transition: color 0.5s;
+                font-family: 'shahd-bold';
+            }
+
+                .banner-btn a span {
+                    width: 0px;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: #fff;
+                    z-index: -1;
+                    transition: 0.5s;
+                }
+
+        /*  .banner-btn a:hover span {
+                    width: 100%;
+                }
+
+                .banner-btn a:hover {
+                    color: #009688;
+                }*/
+
+        #sideNav {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            left: -250px;
+            top: 0;
+            background: rgba(0,0,0,0.5);
+            transition: 0.5s;
+            z-index: 4;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 30px 20px;
+            color: #fff;
+        }
+
+        .marg {
+            list-style: none;
+            color: #fff;
+            margin-left: -12px;
+            margin-bottom: -13px;
+        }
+     
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: 0.8s;
+            font-family: 'shahd-bold';
+        }
+
+        .blak {
+            text-decoration: none;
+            color: #212529;
+            transition: 0.8s;
+            padding: 12px;
+        }
+
+        #menubtn {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 30px;
+            top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 3px;
+            z-index:3;
+        }
+
+        #menu {
+            top: 25px;
+            font-size: 35px;
+            color: black;
+            padding: 6px 12px;
+            transition: all .5s;
+            background: #009688;
+            border-radius: 3px;
+            opacity: 0.9;
+            position: fixed;
+            left: 40px;
+        }
+
+        .drp:hover {
+            padding-left: 20px;
+            color: #009688 !important;
+            text-decoration: none;
+        }
+
+        .blak {
+            text-decoration: none;
+        }
+
+        ul {
+            margin-top: 37px;
+        }
+
+        #cancle {
+            position: fixed;
+            left: -200px;
+            top: 40px;
+            color: white !important;
+            font-size: 30px;
+            transition: 0.5s;
+        }
+
+        .dropdown-menu {
+            background: none;
+            border: none;
+        }
+
+        .dropdown-item {
+            color: #fff;
+        }
+
+        @@media screen and (max-width:770px) {
+            .bsnner-text h1 {
+                font-size: 44px;
+            }
+            .bx {
+                font-size:9px;
+            }
+             .banner-btn a {
+                display: block;
+                margin: 20px auto;
+            }
+        }
+        .WhiteBacground {
+            background-color: #fff;
+            border: solid 4px #009688!important;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .font {
+            font-family: 'shahd-bold';
+            font-size: 18px;
+        }
+        .txtCO {
+            color: #050404;
+            font-family: 'shahd-bold';
+        }
+        .form-control {
+            font-family: 'Changa', sans-serif;
+       
+        }
+        .roco {
+            background-color: #009688 !important;
+            color: white;
+        }
+        .padding {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-family: 'Changa', sans-serif;
+            font-size: 15px;
+        }
+        .footer {
+            background-color: #009688 !important;
+            font-family: 'shahd-bold';
+            color: white;
+        }
+        .name {
+            margin-bottom: -2rem;
+            font-family: 'Changa', sans-serif;
+        }
+        .code {
+            margin-bottom: 3rem;
+            font-family: 'Changa', sans-serif;
+            border-bottom: 1px solid #e5e3e3;
+        }
+    </style>
+
+</head>
+<body>
+   
+    <div id="menubtn">
+        <i class="fas fa-bars" id="menu"></i>
+    </div>
+
+    <div id="sideNav">
+
+        <nav>
+            <i class="fas fa-times" id="cancle"></i>
+
+            <ul>
+                @*<li><p class="name" style=" margin-bottom: -2rem; font-family: 'Changa', sans-serif; color:#fff ;font-size: 16px;">اسلام محمد هجرس</p></li>
+                <li><p class="code" style=" margin-bottom: 3rem; font-family: 'Changa', sans-serif; border-bottom: 1px solid #e5e3e3; color:#fff ;font-size: 16px;">000002</p></li>*@
+                <partial name="Name_Code" />
+                <li><a class="Home drp" asp-area="Customer" asp-controller="Home" asp-action="Index">الرئيسية&nbsp;<i class="fas fa-home"></i></a></li>
+                <li class="nav-item dropdown pad">
+                    <a class="marg drp nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-bottom:-10px">
+                        الطرود
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class=" dropdown-item" id="itmAdd" asp-area="Customer" asp-controller="CustomerOrder" asp-action="Index">اضافة طرد&nbsp;<i class="fas fa-plus"></i> </a>
+                        <a class=" dropdown-item" id="itmMove" asp-area="Customer" asp-controller="Movment" asp-action="Index">تتبع الطرود &nbsp;<i class="fas fa-box"></i></a>
+                    </div>
+                </li>
+                <li><a class="drp" asp-area="Customer" asp-controller="DelivryPrice" asp-action="Index">اسعار التوصيل&nbsp;<i class="fas fa-money-bill-wave"></i></a></li>
+                <li><a class="drp" asp-area="Customer" asp-controller="Profile" asp-action="Index">حسابي&nbsp;<i class="fas fa-user-edit"></i></a></li>
+                @*<li><a class="drp" asp-area="" asp-controller="Home" asp-action="Index">تسجيل الدخول&nbsp;<i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a class="drp" asp-area="" asp-controller="Home" asp-action="Index">تسجيل الخروج&nbsp;<i class="fas fa-sign-out-alt"></i></a></li>*@
+                                
+                <partial name="_LoginPartial" />
+
+                @if (User.IsInRole(SD.Manager))
+                {
+                    <li class="nav-item dropdown pad">
+                        <a class="marg drp nav-link dropdown-toggle text-white" href="#" id="mar" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top:-10px;">
+                            ادارة الفروع
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="mar">
+                            <a class="dropdown-item" id="mm" asp-area="Admin" asp-controller="Province" asp-action="Index">الأقاليم</a>
+                            @*<a class="dropdown-item" asp-area="Admin" asp-controller="City" asp-action="Index">المدن</a>*@
+                            <a class="dropdown-item" asp-area="Admin" asp-controller="Brunsh" asp-action="Index">الفروع</a>
+                            <a class="dropdown-item" asp-area="Admin" asp-controller="Movement" asp-action="Index">الحركات</a>
+                            <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">المستخدمين</a>
+                        </div>
+                    </li>
+                }
+
+            </ul>
+
+
+        </nav>
+
+    </div>
+
+
+    <script>
+        var menubtn = document.getElementById("menubtn");
+        var sideNav = document.getElementById("sideNav");
+        var menu = document.getElementById("menu");
+        var cancle = document.getElementById("cancle");
+        var navbarDropdown = document.getElementById("navbarDropdown");
+        var itmAdd = document.getElementById("itmAdd");
+        var itmMove = document.getElementById("itmMove"); 
+        var mar = document.getElementById("mar");
+        
+        menubtn.onclick = function () {
+            if (sideNav.style.left == "-250px") {
+                sideNav.style.left = "0";
+                menu.style.display = "none";
+                cancle.style.left = "200px";
+
+            }
+            else {
+                sideNav.style.left = "0px";
+                menu.style.display = "none";
+                cancle.style.left = "200px";
+            }
+
+        }
+        cancle.onclick = function () {
+            if (sideNav.style.left == "-200px") {
+                sideNav.style.left = "0";
+                menu.style.display = "none";
+                cancle.style.left = "200px";
+
+            }
+            else {
+                sideNav.style.left = "-250px";
+                menu.style.display = "block";
+                cancle.style.left = "-200px";
+            }
+        }
+        navbarDropdown.onclick = function () {
+            if (navbarDropdown.style.marginBottom == "100px") {
+                navbarDropdown.style.marginBottom = "-10px";
+                navbarDropdown.style.transition = "0.1s";
+            }
+            else {
+                navbarDropdown.style.marginBottom = "100px";
+                navbarDropdown.style.transition = "0.1s";
+            }
+        }
+
+        itmAdd.onclick = function () {
+            if (navbarDropdown.style.marginBottom == "100px") {
+                navbarDropdown.style.marginBottom = "-10px";
+                navbarDropdown.style.transition = "0.1s";
+            }
+        }
+        itmMove.onclick = function () {
+            if (navbarDropdown.style.marginBottom == "100px") {
+                navbarDropdown.style.marginBottom = "-10px";
+                navbarDropdown.style.transition = "0.1s";
+            }
+        }
+      
+    </script>
+    @*<header>
+
+            <nav class=" navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark navbar-dark border-bottom box-shadow mb-3 font fixed-top">
+                <div class="container" style="white-space:nowrap;">
+                    <a class="navbar-brand text-white" style="white-space:nowrap;" asp-area="Customer" asp-controller="Home" asp-action="Index">كويك دليفري</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse d-md-inline-flex flex-md-row-reverse" style="font-size:14px">
+                        <partial name="_LoginPartial" />
+                        <ul class="navbar-nav flex-grow-1">
+
+                            <li class="nav-item dropdown pad">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    الطرود
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-area="Customer" asp-controller="CustomerOrder" asp-action="Index"><i class="fas fa-plus"></i> &nbsp; اضافة طرد</a>
+                                    <a class="dropdown-item" asp-area="Customer" asp-controller="Movment" asp-action="Index">      <i class="fas fa-box"></i> &nbsp; تتبع الطرود</a>
+                                </div>
+                            </li>
+                            @if (User.IsInRole(SD.Manager))
+                            {
+                                <li class="nav-item dropdown pad">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        ادارة الفروع
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Province" asp-action="Index">الأقاليم</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="City" asp-action="Index">المدن</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Brunsh" asp-action="Index">الفروع</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Movement" asp-action="Index">الحركات</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">المستخدمين</a>
+                                    </div>
+                                </li>
+
+                            }
+
+                            <li class="nav-item pad">
+                                <a class="nav-link text-white" asp-area="Customer" asp-controller="DelivryPrice" asp-action="Index"><i class="fas fa-money-bill-wave"></i> &nbsp; اسعار التوصيل </a>
+                            </li>
+
+                            <li class="nav-item pad">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-user-edit"></i> &nbsp; حسابي </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </nav>
+
+        </header>*@
+    @*<div class="container" style="padding-top:70px;">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>*@
+
+    @RenderBody()
+
+    <footer class="border-top footer ">
+        <div class="bx container" style=" font-family: 'Changa', sans-serif; text-align: center">
+
+
+            جميع الحقوق محفوظة لدى شركة كويك دليفري -تنفيذ شركة المطور للبرمجيات &copy;<a></a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

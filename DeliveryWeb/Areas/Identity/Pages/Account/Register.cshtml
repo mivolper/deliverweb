@@ -1,0 +1,207 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+<style>
+    .rd {
+        margin-left: 5px;
+    }
+
+    .rowRD {
+        margin-right: 46px;
+    }
+
+  
+    #Next {
+        pointer-events: none;
+        font-family: 'shahd-bold';
+        color: #fff;
+        width: 100px;
+        background-color: #009688;
+        opacity:0.5;
+    }
+    #Ok {
+        font-family: 'shahd-bold';
+        margin-left: 10px;
+       
+    }
+    
+    .labelOk {
+        font-family: 'shahd-bold';
+        text-align: initial;
+        margin-bottom: 10px;
+      
+    }
+    li{
+     list-style:none;
+    }
+    p {
+        font-family: 'Changa', sans-serif;
+        font-size: 14px;
+        text-align: initial;
+    }
+    .ULTerms {
+        margin-top: 5px;
+        margin-bottom: 34px;
+        border-bottom: 1px solid #e5e3e3;
+    }
+    @@media screen and (max-width:400px) {
+        .rowRD {
+            margin-right: 3px;
+        }
+    }
+</style>
+
+<div class="container" style="padding-top:70px; margin-bottom:100px; z-index:-1;">
+
+    <form class=" WhiteBacground font" dir="rtl" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+      
+            <div id="Register">
+                <div class="row">
+                    <div class="col-12 text-right">
+                        <br />
+                        <h3 class="txtCO">إنشاء حساب جديد</h3>
+                        <br />
+
+                    </div>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                @* Code *@
+                <!--<div class="row text-right" style="padding-right:20px">
+                <div id="di" class="col-md-2 col-sm-12 col-lg-2">
+                    <label asp-for="Input.Code" class="col-form-label font" style="font-size:15px"></label>
+                </div>
+                <div class="col-md-5 col-sm-12 col-lg-5">
+                    <input class="text form-control" asp-for="Input.Code"  />
+                </div>
+            </div>-->
+                @* Name *@
+
+                <div class="row text-right" style="padding-right:20px; padding-top:20px;">
+                    <div class="col-md-2 col-sm-12 col-lg-2">
+                        <label asp-for="Input.Name" class="col-form-label font" style="font-size:15px"></label>
+                    </div>
+                    <div class="col-md-5 col-sm-12 col-lg-5">
+                        <input id="txtName" class="text form-control" asp-for="Input.Name" />
+                        <span class="text-danger" data-valmsg-replace="true" asp-validation-for="Input.Name"></span>
+                    </div>
+                </div>
+
+                @* Email *@
+                <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+                    <div class="col-md-2 col-sm-12 col-lg-2">
+                        <label asp-for="Input.Email" class="col-form-label font" style="font-size:15px"></label>
+                    </div>
+                    <div class="col-md-5 col-sm-12 col-lg-5">
+                        @*<input class="text form-control" asp-for="City" />
+                        *@
+                        <input class="text form-control" asp-for="Input.Email" />
+                        <span class="text-danger" asp-validation-for="Input.Email"></span>
+                    </div>
+                </div>
+                @* Phone1 *@
+                <div class="row text-right" style="padding-right:20px; padding-top:20px;">
+                    <div class="col-md-2 col-sm-12 col-lg-2">
+                        <label asp-for="Input.Phone1" class="col-form-label font" style="font-size:15px"></label>
+                    </div>
+                    <div class="col-md-5 col-sm-12 col-lg-5">
+                        <input class="text form-control" asp-for="Input.Phone1" />
+                        <span class="text-danger" data-valmsg-replace="true" asp-validation-for="Input.Phone1"></span>
+
+                    </div>
+                </div>
+
+                @* Phone2 *@
+                <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+                    <div class="col-md-2 col-sm-12 col-lg-2">
+                        <label asp-for="Input.Phone2" class="col-form-label font" style="font-size:15px"></label>
+                    </div>
+                    <div class="col-md-5 col-sm-12 col-lg-5">
+                        <input class="text form-control" asp-for="Input.Phone2" />
+                    </div>
+                </div>
+
+                @* Address *@
+                <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+                    <div class="col-md-2 col-sm-12 col-lg-2">
+                        <label asp-for="Input.Address" class="col-form-label font" style="font-size:15px"></label>
+                    </div>
+                    <div class="col-md-5 col-sm-12 col-lg-5">
+                        <input class="text form-control" asp-for="Input.Address" />
+                        <span class="text-danger" data-valmsg-replace="true" asp-validation-for="Input.Address"></span>
+                    </div>
+                </div>
+
+                @* Password *@
+                <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+                    <div class="col-md-2 col-sm-12 col-lg-2">
+                        <label asp-for="Input.Password" class="col-form-label font" style="font-size:15px"></label>
+                    </div>
+                    <div class="col-md-5 col-sm-12 col-lg-5">
+                        <input class="text form-control" asp-for="Input.Password" />
+                        <span class="text-danger" data-valmsg-replace="true" asp-validation-for="Input.Password"></span>
+                    </div>
+                </div>
+
+                @* ConfirmPassWord *@
+                <div class="row text-right" style="padding-right:20px; padding-top:20px; ">
+                    <div class="col-md-2 col-sm-12 col-lg-2">
+                        <label asp-for="Input.ConfirmPassword" class="col-form-label font" style="font-size:15px"></label>
+                    </div>
+                    <div class="col-md-5 col-sm-12 col-lg-5">
+                        <input class="text form-control" asp-for="Input.ConfirmPassword" />
+                        <span class="text-danger" data-valmsg-replace="true" asp-validation-for="Input.ConfirmPassword"></span>
+                    </div>
+                </div>
+
+                @if (User.IsInRole(SD.Manager))
+                {
+                    <br />
+                    <div class="form-group row">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="rowRD col-md-5 row">
+                            <div class="col-4">
+                                <label class="form-check-label">
+                                    <input class="rd" type="radio" value="@SD.Manager" name="rdRole" />مدير
+                                </label>
+                            </div>
+                            <div class="col-8  col-lg-4">
+                                <label class="form-check-label">
+                                    <input class="rd" type="radio" value="@SD.Delegate" name="rdRole" />مندوب نوصيل
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @* Buttons *@
+                <div class="row" style="padding-right:20px; padding-top:20px;">
+                    <div class="col-lg-2 col-md-2">
+
+                    </div>
+                    <div class="col-md-5 col-sm-12 col-lg-5">
+                        <div class="row">
+                            <div class="col-6">
+                                <a class="btn-secondary form-control" asp-area="Customer" asp-controller="Home" asp-action="Index" style="text-align:center;text-decoration:none">رجوع</a>
+                            </div>
+                            <div class="col-6">
+                                <input type="submit" class="btn-primary form-control" value="تسجيل" style="text-align:center;" />
+                                @*<button type="submit" class="btn btn-primary">Register</button>*@
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
